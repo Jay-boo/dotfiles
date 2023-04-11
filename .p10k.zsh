@@ -1,0 +1,1 @@
+/home/jay/.p10k.zsh
