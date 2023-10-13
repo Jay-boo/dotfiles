@@ -2,6 +2,7 @@
 - .p10k.zsh
 - zshrc
 - alacritty (~/.config/alacritty/)
-- nvim (~/.config/nvim/)
+- tmp (~/.config/nvim/lua/custom/)
 - xmobar (~/.config/xmobar)
 - xmonad.hs (~/.xmonad/xmonad.hs)
+- custom : Synced link to ~/.config/nvim/lua/custom/

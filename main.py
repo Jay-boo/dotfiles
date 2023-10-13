@@ -1,1 +1,0 @@
-/home/jay/.config/nvim/lua/custom/main.py
