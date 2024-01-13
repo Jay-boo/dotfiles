@@ -179,13 +179,14 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=57
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+  # typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=55
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
   # Default prompt symbol.
@@ -204,17 +205,18 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=31
+  # typeset -g POWERLEVEL9K_DIR_FOREGROUND=31
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=93
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=103
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=81
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=39
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=69
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -365,7 +367,8 @@
     if (( $1 )); then
       # Styling for up-to-date Git status.
       local       meta='%f'     # default foreground
-      local      clean='%76F'   # green foreground
+      # local      clean='%76F'   # green foreground
+      local      clean='%56F'   # green foreground
       local   modified='%178F'  # yellow foreground
       local  untracked='%39F'   # blue foreground
       local conflicted='%196F'  # red foreground
@@ -475,7 +478,7 @@
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
 
   # Icon color.
-  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=76
+  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_COLOR=19
   typeset -g POWERLEVEL9K_VCS_LOADING_VISUAL_IDENTIFIER_COLOR=244
   # Custom icon.
   # typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -732,7 +735,7 @@
 
   ###########################[ vim_shell: vim shell indicator (:sh) ]###########################
   # Vim shell indicator color.
-  typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=34
+  typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=68
   # Custom icon.
   # typeset -g POWERLEVEL9K_VIM_SHELL_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -882,7 +885,7 @@
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=37
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=68
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # If set to "false", won't show virtualenv if pyenv is already shown.
@@ -1367,7 +1370,7 @@
   # Tip: Remove the next line to always show gcloud.
   typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs|gsutil'
    # Google cloud color.
-  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=32
+  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=56
 
   # Google cloud format. Change the value of POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION and/or
   # POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION if the default is too verbose or not informative
@@ -1392,7 +1395,7 @@
   # and COMPLETE. You can also hide gcloud in state PARTIAL by setting
   # POWERLEVEL9K_GCLOUD_PARTIAL_VISUAL_IDENTIFIER_EXPANSION and
   # POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION to empty.
-  typeset -g POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_ID//\%/%%}'
+  typeset -g POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_ID//\%/%%}/${P9K_GCLOUD_ACCOUNT//\%/%%}'
   typeset -g POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_NAME//\%/%%}'
 
   # Send a request to Google (by means of `gcloud projects describe ...`) to obtain project name
@@ -1438,7 +1441,8 @@
       # '*:*prod*:*'  PROD    # These values are examples that are unlikely
       # '*:*test*:*'  TEST    # to match your needs. Customize them as needed.
       '*'             DEFAULT)
-  typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_FOREGROUND=32
+  # typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_FOREGROUND=32
+  typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_FOREGROUND=196
   # typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # Use POWERLEVEL9K_GOOGLE_APP_CRED_CONTENT_EXPANSION to specify the content displayed by
